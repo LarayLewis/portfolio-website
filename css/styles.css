@@ -114,8 +114,6 @@ button:hover, button:focus, .button:hover, .button:focus {
 	clear:both
 }
 .profile{
-	max-width: 1000px;
-	margin: 0 auto;
 	max-width: 1000px;	
 }
 .page-footer{
