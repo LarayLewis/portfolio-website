@@ -107,6 +107,9 @@ button:hover, button:focus, .button:hover, .button:focus {
 	border-radius: 50%;
 }
 .profile_text{
+	margin: 0 auto;
+	text-align: bottom;
+}
 .page-footer{
 	clear:both
 }
