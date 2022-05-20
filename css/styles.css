@@ -1,0 +1,199 @@
+:root{
+	--page-background-color: #afd0e9d2;
+	--primary-color: #215c43;
+	--secondary-color: #861a16;
+	--hover-color:#a5a743;
+	--banner-color:#2a694f;
+	--button-background-color: #6d1f85;
+	--button-border-color: rgba(61, 2, 61, 0.8);
+	--button-text-color: white;
+	--button-secondary-background-color: #e0b354;
+	--button-secondary-text-color: #2b2b2b;
+	--grid-background-color: rgb(236, 183, 183);
+	--window-darkest-color: #1d180b;
+	--window-medium-color: #828539;
+	--window-brightest-color: #a1a036;
+}
+*{
+	box-sizing: border-box;
+}
+body{
+    background-color: var(--page-background-color);
+}
+body{
+    font-family: 'Merriweather', sans-serif;
+    font-weight: 200;
+		line-height: 1.6;
+}
+#featuring{
+	font-weight: 300;
+	font-style: italic;
+}
+a{
+	color: var(--secondary-color);
+	text-decoration: none;
+}
+a:visited{
+	color: var(--secondary-color); /*visited link */
+}
+a:hover, a:focus{
+	text-decoration: underline;
+	color: var(--hover-color)
+} 
+a:active{ color: var(--primary-color) /*selected link*/
+}
+button,
+.button {
+	border: none;/*overwrites browser defaults and resets the border */
+	display: inline-block;
+	font-family: inherit; /*takes the font from the outer container*/
+	background-color: var(--button-background-color);/*styles the background color, font color, and text decoration (underline, etc.) */
+	color: var(--button-text-color);
+	text-decoration: none; 
+	padding: 10px;/*adds spacing to the button (this will be discuss more in-depth later) */
+	border-radius: 3px;
+	border-bottom: 4px solid var(--button-border-color); /*gives the button a bottom border with a width of 4px, a type of solid and a color in rgba format */
+	transition: .2s opacity; /*first is transition-property, and then transition-duration*/
+}
+button:hover, button:focus, .button:hover, .button:focus {
+	cursor: pointer; /*lets the mouse appear as a hand when hovering over a button */
+	opacity: .8; /*reduces the opacity of the button to 80%*/
+}
+.button_secondary{
+	background-color: var(--button-secondary-background-color);
+	color:var(--button-secondary-text-color);
+}
+.nagivation-list li{
+	list-style-type: none; /*removes the bullet points */
+	display: inline-block;
+	margin-left: 30 px;
+}
+.navigation-list_item--active{
+	text-decoration: none
+}
+.navigation-list_item--active:hover, .navigation-list_item--active:focus{
+	text-decoration: underline; /*add the underline when I am hovering over it. Used the :focus too to make it accessible*/
+	text-decoration-color: #101101;
+}
+#banner{
+	color: var(--banner-color);
+	font-family: 'Square Peg', cursive;
+	margin-left: 40px;
+	display: inline-block;
+}
+.page-header{
+	display: flex;
+	width: 100%;
+	padding: 20px;
+}
+.page-header_item{
+	flex: 0 1 300px;
+}
+.page-header_item:last-child{
+	flex-grow: 1;
+	text-align: right;
+	padding:30px;
+}
+.introduction{
+	text-align: center;
+	max-width: 1000px;
+	margin: 0 auto; /* No spacing to top and bottom and auto-spacing to left and right, which centers the container horizontally*/
+}
+.profile_portrait{
+	float: left;
+	max-width: 60%;
+	height: auto;
+	margin-right: 40px;
+	border-radius: 50%;
+}
+.page-footer{
+	clear:both
+}
+.profile{
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.page-footer{
+	clear:both;
+	display:flex;
+	flex-direction: column;
+	text-align: center;
+}
+.grid{
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 20px;
+}
+.grid_item{
+	background-color: var(--grid-background-color);
+}
+.grid_item:last-child{
+	grid-column-start: 3;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+h1{
+	font-size: 45px;
+}
+@media all and (max-width: 500px) {
+	.grid{
+		grid-template-columns: 1fr;
+	}
+}
+@media all and (max-width: 750px) and (min-width: 500px) {
+	.grid{
+		grid-template-columns: 1fr 1fr;
+	}
+}
+@media all and (max-width: 750px){ /* shared code*/
+	.grid{
+		grid-gap: 10px;
+	}
+	.grid_item:last-child{
+	grid-column: auto / auto;
+	grid-row: auto / auto;
+	}
+	h3{
+		font-size: 22px;
+	}
+}
+.career-boise-illustration{
+	text-align: center;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+@keyframes color-change{
+	0%{
+		fill: var(--window-darkest-color)
+	}
+	50%{
+		fill: var(--window-medium-color)
+	}
+	100%{
+		fill: var(--window-brightest-color)
+	}	
+}
+.sun{
+	animation: 5s color-change infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse{
+	from{
+		transform: translate(460px, 48px);
+	}
+	to{
+		transform: translate(50px, 48px);
+	}
+}
+.cloud-back{
+	animation: 15s cloud-move-reverse infinite alternate linear;
+}
+@keyframes ladybug-move{
+	5% {transform: rotate(10deg)}
+}
+#logo:hover{
+	animation: 10s ladybug-move;
+}
+
+
