@@ -190,7 +190,7 @@ h1{
 	}
 }
 .cloud-back{
-	animation: 15s cloud-move-reverse infinite alternate linear;
+	animation: 8s cloud-move-reverse infinite alternate linear;
 }
 @keyframes ladybug-move{
 	5% {transform: rotate(10deg)}
